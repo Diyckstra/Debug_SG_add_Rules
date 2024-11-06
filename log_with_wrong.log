@@ -1,0 +1,33 @@
+-----------------------------------------------------: timestamp="2024-11-06T14:37:34.475+0300"
+2024-11-06T14:37:34.475+0300 [DEBUG] provider.terraform-provider-rockitcloud_v24.1.0: [aws-sdk-go] <?xml version='1.0' encoding='UTF-8'?>
+<DescribeSecurityGroupsResponse><securityGroupInfo><item><ownerId>ankurbatov</ownerId><groupId>sg-A3F1FCEA</groupId><groupName>Testing-SG-Add-Rule</groupName><groupDescription>Testing-SG-Add-Rule</groupDescription><vpcId>vpc-1A738697</vpcId><ipPermissions /><ipPermissionsEgress /><tagSet><item><key>Name</key><value>Testing-SG-Add-Rule</value></item></tagSet></item></securityGroupInfo><requestId>16347165-1354-4442-aca7-b803529aeaa8</requestId><ResponseMetadata><RequestId>16347165-1354-4442-aca7-b803529aeaa8</RequestId></ResponseMetadata></DescribeSecurityGroupsResponse>: timestamp="2024-11-06T14:37:34.475+0300"
+2024-11-06T14:37:34.475+0300 [DEBUG] provider.terraform-provider-rockitcloud_v24.1.0: Authorizing security group sg-A3F1FCEA Ingress rule: {
+  FromPort: 10443,
+  IpProtocol: "tcp",
+  IpRanges: [{
+      CidrIp: "185.12.31.131/32",
+      Description: "7"
+    },{
+      CidrIp: "8.8.8.8/32",
+      Description: "7"
+    }],
+  ToPort: 10443
+}: timestamp="2024-11-06T14:37:34.475+0300"
+2024-11-06T14:37:34.475+0300 [DEBUG] provider.terraform-provider-rockitcloud_v24.1.0: [aws-sdk-go] DEBUG: Request ec2/AuthorizeSecurityGroupIngress Details:
+---[ REQUEST POST-SIGN ]-----------------------------
+POST / HTTP/1.1
+Host: ec2.k2.cloud
+User-Agent: APN/1.0 HashiCorp/1.0 Terraform/1.8.5 (+https://www.terraform.io) terraform-provider-aws/dev (+https://registry.terraform.io/providers/hashicorp/aws) aws-sdk-go/1.44.10 (go1.21.4; linux; amd64)
+Content-Length: 348
+Authorization: AWS4-HMAC-SHA256 Credential=blablabla
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+X-Amz-Date: 20241106T113734Z
+Accept-Encoding: gzip
+
+Action=AuthorizeSecurityGroupIngress&GroupId=sg-A3F1FCEA&IpPermissions.1.FromPort=10443&IpPermissions.1.IpProtocol=tcp&IpPermissions.1.IpRanges.1.CidrIp=185.12.31.131%2F32&IpPermissions.1.IpRanges.1.Description=7&IpPermissions.1.IpRanges.2.CidrIp=8.8.8.8%2F32&IpPermissions.1.IpRanges.2.Description=7&IpPermissions.1.ToPort=10443&Version=2016-11-15
+-----------------------------------------------------: timestamp="2024-11-06T14:37:34.475+0300"
+2024-11-06T14:37:35.087+0300 [DEBUG] provider.terraform-provider-rockitcloud_v24.1.0: [aws-sdk-go] DEBUG: Response ec2/AuthorizeSecurityGroupIngress Details:
+---[ RESPONSE ]--------------------------------------
+HTTP/1.1 200 OK
+Connection: close
+Content-Type: text/xml

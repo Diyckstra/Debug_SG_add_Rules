@@ -20,6 +20,6 @@ resource "aws_security_group_rule" "Creating_SG_rules_input" {
   from_port         = local.sg_access[count.index]["from_port"]
   to_port           = local.sg_access[count.index]["to_port"]
   protocol          = local.sg_access[count.index]["protocol"]
-  cidr_blocks       = local.sg_access[count.index]["cidr_blocks"]
+  cidr_blocks       = [local.sg_access[count.index]["cidr_blocks"]]
   security_group_id = aws_security_group.Creating_SG.id
 }
