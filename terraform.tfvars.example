@@ -1,0 +1,8 @@
+admin = {
+    secret_key  = "EC2_SECRET_KEY"
+    access_key  = "EC2_ACCESS_KEY"
+    pubkey_name = "SSH PUB NAME"
+    public_key  = "SSH PUB KEY"
+    }
+
+VPC_ID = "VPC ID where will create SG"
